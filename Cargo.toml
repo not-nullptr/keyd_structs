@@ -1,0 +1,7 @@
+[package]
+name = "keyd_structs"
+edition = "2021"
+version = "0.1.0"
+
+[dependencies]
+serde = { version = "1.0.217", features = ["alloc", "derive"] }
