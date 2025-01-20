@@ -6,16 +6,16 @@
 extern crate alloc;
 
 use alloc::{string::String, vec::Vec};
-use serde::{Deserialize, Serialize};
+use bincode::{Decode, Encode};
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, Encode, Decode)]
 pub enum Clipboard {
     Empty,
     Text(String),
     Image(Vec<u8>),
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, Encode, Decode)]
 pub struct ToKeyboard {
     pub cpu_usage: u8,
     pub memory_usage: u8,
